@@ -25,7 +25,8 @@ header {
 
 /* Estilos para o título principal da página. */
 h1 {
-    font-size: 2em;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: 700;
     letter-spacing: 2px;
     color: #1a1a1a;
@@ -33,6 +34,11 @@ h1 {
     max-width: 90%;
     margin-bottom: 20px;
     text-shadow: #333;
+}
+h2{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+    font-weight: 700;
 }
 
 /* Estilização do card principal da seção "Sobre". */
