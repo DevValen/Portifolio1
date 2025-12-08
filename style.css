@@ -1,0 +1,303 @@
+/* Importa a fonte 'Poppins' do Google Fonts. */
+@import url('fundo3.jpeg');
+
+/* Estilos globais para o corpo da página. */
+body {
+    background-image: url(WhatsApp\ Image\ 2025-12-07\ at\ 9.56.52\ PM.jpeg);
+    font-family: Poppins, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilização do cabeçalho, centralizando seu conteúdo. */
+header {
+    text-align: center;
+    margin-top: 5%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilos para o título principal da página. */
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    padding: 20px 20px 10px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    text-shadow: #333;
+}
+
+/* Estilização do card principal da seção "Sobre". */
+.about-content {
+    background-color: #fefbfd;
+    border-radius: 15px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 40px;                                                                                     
+    max-width: 1200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 90%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover para o card, elevando-o e adicionando uma borda. */
+.about-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border: 1px solid #D89ACF;
+}
+
+/* Container flex para centralizar o card 'about-content' na página. */
+.about-section {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* Reset de padding para os elementos de texto e habilidades. */
+.about-text,
+.skills-card {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Título para a seção de habilidades. */
+.skills-card h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffb1ed;
+    padding-bottom: 5px;
+}
+
+/* Remove estilos padrão da lista de habilidades. */
+.skills-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Estilização de cada item da lista de habilidades. */
+.skills-card li {
+    font-size: 1.1em;
+    line-height: 2;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Cria um marcador personalizado para os itens da lista. */
+.skills-card li::before {
+    content: "•  ";
+    color: #ffb1ed;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    position: absolute;
+    left: 0;
+}
+
+/* Estilo para a nota de rodapé na seção de habilidades. */
+.skils-note {
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Ajustes de layout para telas maiores (a partir de 758px). */
+@media(min-width: 758px) {
+    /* Altera o card para um layout de duas colunas. */
+    .about-content {
+        grid-template-columns: 2fr 1fr;
+    }
+    /* Alinha o texto à esquerda em telas maiores. */
+    .about-text {
+        text-align: left;
+    }
+}
+
+/* --- Seção de Projetos --- */
+.projects-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #fefbfd;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
+    text-align: left;
+    overflow: hidden;
+    height: auto;
+}
+
+.project-image-container {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.project-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 177, 237, 0.4) 70%, rgba(216, 154, 207, 0.6) 100%);
+    z-index: 2;
+}
+
+.project-card h3,
+.project-card .tech-stack,
+.project-card p,
+.project-card .project-links {
+    padding: 0 20px;
+}
+
+.project-card h3 {
+    padding-top: 15px;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 0 20px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-live {
+    display: inline-block;
+    background-color: #ffb1ed;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 150px;
+}
+
+.btn-live:hover {
+    background-color: #c07bbf;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.project-Links a:last-child {
+    background-color: transparent;
+    color: #333; /* Cor do texto escuro */
+    text-decoration: none;
+    font-weight: 400;
+    padding: 8px 15px;
+    border: 1px solid #D89ACF; /* Borda com a cor principal */
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    max-width: 200px;
+}
+
+/* Efeito ao passar o mouse no link secundário */
+.project-Links a:last-child:hover {
+    
+    background-color: #ffb1ed30; /* Fundo suave ao passar o mouse */
+    color: #D89ACF;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas pequenas (celulares) */
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Telas médias (tablets) */
+@media (min-width: 701px) and (max-width: 991px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Estilos para o Rodapé */
+footer {
+    background-color: #fefbfd; /* Fundo claro para contrastar ou #ffb1ed85 se preferir o rosa */
+    color: #333;
+    padding: 20px 0;
+    text-align: center; /* Centraliza o texto e o conteúdo */
+    width: 100%;
+    margin-top: auto; /* Garante que o footer fique no final da página (já que o body tem flex-direction: column) */
+    border-top: 1px solid #ffb1ed; 
+}
+
+/* Container dos links */
+.social-links {
+    display: flex; /* Coloca os links lado a lado */
+    justify-content: center; /* Centraliza os links na página */
+    gap: 20px; /* Espaço entre o LinkedIn e o GitHub */
+    margin: 10px 0;
+}
+
+/* Estilo para os Links */
+.social-links a {
+    color: #D89ACF; /* Cor dos seus botões */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Efeito Hover */
+.social-links a:hover {
+    color: #c07bbf;
+    text-decoration: underline;
+}
+
+/* Estilo da nota de copyright */
+.copyright {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 15px;
+}
