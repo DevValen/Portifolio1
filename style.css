@@ -1,316 +1,198 @@
-/* Importa a fonte 'Poppins' do Google Fonts. */
-@import url('fundo3.jpeg');
+:root {
+    --bg-main: #CEE0DC;
+    --bg-card: #FFFFFF;
+    --secondary: #B9CFD4;
+    --border: #AFAAB9;
+    --primary: #B48291;
+    --accent: #A5243D;
+    --text-main: #2b2b2b;
+    --text-light: #555;
+}
 
-/* Estilos globais para o corpo da página. */
-body {
-    background-image: url(WhatsApp\ Image\ 2025-12-07\ at\ 9.56.52\ PM.jpeg);
-    font-family: Poppins, sans-serif;
-    min-height: 100vh;
+* {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Estilização do cabeçalho, centralizando seu conteúdo. */
-header {
-    text-align: center;
-    margin-top: 5%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-/* Estilos para o título principal da página. */
-h1 {
-    font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #1a1a1a;
-    padding: 20px 20px 10px;
-    max-width: 90%;
-    margin-bottom: 20px;
-    text-shadow: #333;
-}
-h2{
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 2em;
-    font-weight: 700;
-}
-
-/* Estilização do card principal da seção "Sobre". */
-.about-content {
-    background-color: #fefbfd;
-    border-radius: 15px;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    gap:40px;                                               
-    max-width: 1200px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 90%;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efeito de hover para o card, elevando-o e adicionando uma borda. */
-.about-content:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    border: 1px solid #D89ACF;
-}
-
-/* Container flex para centralizar o card 'about-content' na página. */
-.about-section {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
-}
-
-/* Reset de padding para os elementos de texto e habilidades. */
-.about-text,
-.skills-card {
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Título para a seção de habilidades. */
-.skills-card h2 {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ffb1ed;
-    padding-bottom: 5px;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
 }
 
-/* Remove estilos padrão da lista de habilidades. */
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--accent);
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* ABOUT */
+.about-section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.about-content {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 2fr 1fr;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.about-text h2,
+.skills-card h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.about-text p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
 .skills-card ul {
     list-style: none;
-    padding-left: 0;
 }
 
-/* Estilização de cada item da lista de habilidades. */
 .skills-card li {
-    font-size: 1.1em;
-    line-height: 2;
-    color: #555;
+    padding-left: 18px;
     position: relative;
-    padding-left: 25px;
+    margin-bottom: 10px;
 }
 
-/* Cria um marcador personalizado para os itens da lista. */
 .skills-card li::before {
-    content: "•  ";
-    color: #ffb1ed;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
+    content: "•";
     position: absolute;
     left: 0;
+    color: var(--primary);
 }
 
-/* Estilo para a nota de rodapé na seção de habilidades. */
-.skils-note {
-    font-style: italic;
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #888;
+.skills-note {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
 }
 
-/* Ajustes de layout para telas maiores (a partir de 758px). */
-@media(min-width: 758px) {
-    /* Altera o card para um layout de duas colunas. */
-    .about-content {
-        grid-template-columns: 2fr 1fr;
-    }
-    /* Alinha o texto à esquerda em telas maiores. */
-    .about-text {
-        text-align: left;
-    }
-}
-
-/* --- Seção de Projetos --- */
+/* PROJECTS */
 .projects-section {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
+}
+
+.projects-section h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+    color: var(--accent);
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .project-card {
-    background-color: #fefbfd;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 0;
-    text-align: left;
+    background: var(--bg-card);
+    border-radius: 20px;
     overflow: hidden;
-    height: auto;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
 }
 
-.project-image-container {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    margin-bottom: 20px;
+.project-card:hover {
+    transform: translateY(-8px);
 }
 
-.project-image-container img {
+.project-card img {
     width: 100%;
-    height: 100%;
+    height: 180px;
     object-fit: cover;
-    display: block;
 }
 
-.project-image-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 177, 237, 0.4) 70%, rgba(216, 154, 207, 0.6) 100%);
-    z-index: 2;
+.project-info {
+    padding: 25px;
 }
 
-.project-card h3,
-.project-card .tech-stack,
-.project-card p,
-.project-card .project-links {
-    padding: 0 20px;
+.project-info h3 {
+    margin-bottom: 5px;
 }
 
-.project-card h3 {
-    padding-top: 15px;
+.tech {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
 }
 
 .project-links {
     display: flex;
-    flex-direction: row;
     gap: 10px;
     margin-top: 15px;
-    padding: 0 20px 30px;
-    align-items: center;
-    justify-content: center;
 }
 
-.btn-live {
-    display: inline-block;
-    background-color: #ffb1ed;
+.btn-primary {
+    background: var(--primary);
     color: white;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 10px 15px;
+    padding: 8px 16px;
     border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 150px;
-}
-
-.btn-live:hover {
-    background-color: #c07bbf;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.project-Links a:last-child {
-    background-color: transparent;
-    color: #333; /* Cor do texto escuro */
     text-decoration: none;
-    font-weight: 400;
-    padding: 8px 15px;
-    border: 1px solid #D89ACF; /* Borda com a cor principal */
-    border-radius: 8px;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    max-width: 200px;
-}
-
-/* Efeito ao passar o mouse no link secundário */
-.project-Links a:last-child:hover {
-    
-    background-color: #ffb1ed30; /* Fundo suave ao passar o mouse */
-    color: #D89ACF;
-}
-
-/* --- Media Queries para Responsividade --- */
-
-/* Telas pequenas (celulares) */
-@media (max-width: 700px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Telas médias (tablets) */
-@media (min-width: 701px) and (max-width: 991px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Telas grandes (desktops) */
-@media (min-width: 992px) {
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-/* Estilos para o Rodapé */
-footer {
-    background-color: #fefbfd; /* Fundo claro para contrastar ou #ffb1ed85 se preferir o rosa */
-    color: #333;
-    padding: 20px 0;
-    text-align: center; /* Centraliza o texto e o conteúdo */
-    width: 100%;
-    margin-top: auto; /* Garante que o footer fique no final da página (já que o body tem flex-direction: column) */
-    border-top: 1px solid #ffb1ed; 
-}
-
-/* Container dos links */
-.social-links {
-    display: flex; /* Coloca os links lado a lado */
-    justify-content: center; /* Centraliza os links na página */
-    gap: 20px; /* Espaço entre o LinkedIn e o GitHub */
-    margin: 10px 0;
-}
-
-/* Estilo para os Links */
-.social-links a {
-    color: #D89ACF; /* Cor dos seus botões */
-    text-decoration: none; /* Remove o sublinhado */
     font-weight: 600;
-    transition: color 0.3s ease;
 }
 
-/* Efeito Hover */
-.social-links a:hover {
-    color: #c07bbf;
-    text-decoration: underline;
+.btn-primary:hover {
+    background: var(--accent);
 }
 
-/* Estilo da nota de copyright */
-.copyright {
-    font-size: 0.8em;
-    color: #888;
-    margin-top: 15px;
+.btn-outline {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
-/* Efeito de hover para o card, elevando-o e adicionando uma borda. */
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    border: 1px solid #D89ACF;
+.btn-outline:hover {
+    background: var(--secondary);
+}
+
+/* FOOTER */
+footer {
+    background: var(--secondary);
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.social-links {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 500;
 }
